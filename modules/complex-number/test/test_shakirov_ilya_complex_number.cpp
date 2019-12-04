@@ -37,7 +37,7 @@ TEST(Shakirov_Ilya_ComplexNumberTest, Test_Complex_Expression) {
     ComplexNumber c(2.0, 1.0);
 
     // Act
-    ComplexNumber res = (a + b)* c;
+    ComplexNumber res = (a + b) * c;
     ComplexNumber simple(-3.0, 6.0);
 
     // Assert
