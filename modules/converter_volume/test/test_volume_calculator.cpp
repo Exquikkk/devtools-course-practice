@@ -119,7 +119,7 @@ TEST_F(LengthVolumeTest, Can_Centiliters_To_Liter) {
 
     Act(args);
 
-    Assert("Liter: 0.001");
+    Assert("Liter: 0.01");
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Kiloliter) {
@@ -191,7 +191,7 @@ TEST_F(LengthVolumeTest, Can_Liter_To_Kiloliter) {
 
     Act(args);
 
-    Assert("Kiloliter: 1.0");
+    Assert("Kiloliter: 10.0");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Milliliter) {
