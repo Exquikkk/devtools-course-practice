@@ -72,9 +72,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Centiliters_To_Deciliters) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::CentilitersinMilliliter(input);
 
     // Act
-    output = converter_volume::CentilitersinDeciliters(input);
+    output = converter_volume::MilliliterinDeciliters(trans);
 
     // Assert
     EXPECT_NEAR(0.3, output, 0.1);
@@ -84,9 +85,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Centiliters_To_Liter) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::CentilitersinMilliliter(input);
 
     // Act
-    output = converter_volume::CentilitersinLiter(input);
+    output = converter_volume::MilliliterinLiter(trans);
 
     // Assert
     EXPECT_NEAR(0.003, output, 0.001);
@@ -96,9 +98,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Centiliters_To_Kiloliter) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::CentilitersinMilliliter(input);
 
     // Act
-    output = converter_volume::CentilitersinKiloliter(input);
+    output = converter_volume::MilliliterinKiloliter(trans);
 
     // Assert
     EXPECT_NEAR(0.00003, output, 0.00001);
@@ -120,9 +123,9 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Deciliters_To_Centiliters) {
     // Arrange
     double input = 3.0;
     double output;
-
+    double trans = converter_volume::DecilitersinMilliliter(input);
     // Act
-    output = converter_volume::DecilitersinCentiliters(input);
+    output = converter_volume::MilliliterinCentiliters(trans);
 
     // Assert
     EXPECT_NEAR(30.0, output, 0.01);
@@ -132,9 +135,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Deciliters_To_Liter) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::DecilitersinMilliliter(input);
 
     // Act
-    output = converter_volume::DecilitersinLiter(input);
+    output = converter_volume::MilliliterinLiter(trans);
 
     // Assert
     EXPECT_NEAR(0.3, output, 0.1);
@@ -144,9 +148,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Deciliters_To_Kiloliter) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::DecilitersinMilliliter(input);
 
     // Act
-    output = converter_volume::DecilitersinKiloliter(input);
+    output = converter_volume::MilliliterinKiloliter(trans);
 
     // Assert
     EXPECT_NEAR(0.0003, output, 0.00001);
@@ -156,7 +161,7 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Liter_To_Milliliter) {
     // Arrange
     double input = 3.0;
     double output;
-
+    
     // Act
     output = converter_volume::LiterinMilliliter(input);
 
@@ -168,9 +173,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Liter_To_Centiliters) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::LiterinMilliliter(input);
 
     // Act
-    output = converter_volume::LiterinCentiliters(input);
+    output = converter_volume::MilliliterinCentiliters(trans);
 
     // Assert
     EXPECT_NEAR(300.0, output, 0.01);
@@ -180,9 +186,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Liter_To_Deciliters) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::LiterinMilliliter(input);
 
     // Act
-    output = converter_volume::LiterinDeciliters(input);
+    output = converter_volume::MilliliterinDeciliters(trans);
 
     // Assert
     EXPECT_NEAR(30.0, output, 0.1);
@@ -192,9 +199,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Liter_To_Kiloliter) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::LiterinMilliliter(input);
 
     // Act
-    output = converter_volume::LiterinKiloliter(input);
+    output = converter_volume::MilliliterinKiloliter(trans);
 
     // Assert
     EXPECT_NEAR(0.3, output, 0.1);
@@ -216,9 +224,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Kiloliter_To_Centiliters) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::KiloliterinMilliliter(input);
 
     // Act
-    output = converter_volume::KiloliterinCentiliters(input);
+    output = converter_volume::MilliliterinCentiliters(trans);
 
     // Assert
     EXPECT_NEAR(300000.0, output, 0.1);
@@ -228,9 +237,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Kiloliter_To_Deciliters) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::KiloliterinMilliliter(input);
 
     // Act
-    output = converter_volume::KiloliterinDeciliters(input);
+    output = converter_volume::MilliliterinDeciliters(trans);
 
     // Assert
     EXPECT_NEAR(30000.0, output, 0.1);
@@ -240,9 +250,10 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Kiloliter_To_Liter) {
     // Arrange
     double input = 3.0;
     double output;
+    double trans = converter_volume::KiloliterinMilliliter(input);
 
     // Act
-    output = converter_volume::KiloliterinLiter(input);
+    output = converter_volume::MilliliterinLiter(trans);
 
     // Assert
     EXPECT_NEAR(300.0, output, 0.1);
