@@ -14,7 +14,7 @@ class VolumeCalculator {
     bool ValidateNumberOfArgs(int argc, const char** argv);
     std::string message_;
     typedef struct {
-        double value;
+        double value, trans;
         std::string operation;
     } Arguments;
 };

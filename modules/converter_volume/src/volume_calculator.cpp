@@ -148,49 +148,61 @@ std::string VolumeCalculator::operator()(int argc, const char** argv) {
 
     std::ostringstream stream;
     if (args.operation == "1") {
-        stream << "Liter: " << converter_volume::KiloliterinLiter(args.value);
+    double trans = converter_volume::KiloliterinMilliliter(args.value);
+        stream << "Liter: " << converter_volume::MilliliterinLiter(args.trans);
     } else if (args.operation == "2") {
+        double trans = converter_volume::KiloliterinMilliliter(args.value);
         stream << "Deciliters: " << converter_volume::
-            KiloliterinDeciliters(args.value);
+            MilliliterinDeciliters(args.trans);
     } else if (args.operation == "3") {
+        double trans = converter_volume::KiloliterinMilliliter(args.value);
         stream << "Centiliters: " << converter_volume::
-            KiloliterinCentiliters(args.value);
+            MilliliterinCentiliters(args.trans);
     } else if (args.operation == "4") {
         stream << "Milliliter: " << converter_volume::
             KiloliterinMilliliter(args.value);
     } else if (args.operation == "5") {
+        double trans = converter_volume::LiterinMilliliter(args.value);
         stream << "Kiloliter: " << converter_volume::
-            LiterinKiloliter(args.value);
+            MilliliterinKiloliter(args.trans);
     } else if (args.operation == "6") {
+        double trans = converter_volume::LiterinMilliliter(args.value);
         stream << "Deciliters: " << converter_volume::
-            LiterinDeciliters(args.value);
+            MilliliterinDeciliters(args.trans);
     } else if (args.operation == "7") {
+        double trans = converter_volume::LiterinMilliliter(args.value);
         stream << "Centiliters: " << converter_volume::
-            LiterinCentiliters(args.value);
+            MilliliterinCentiliters(args.trans);
     } else if (args.operation == "8") {
         stream << "Milliliter: " << converter_volume::
             LiterinMilliliter(args.value);
     } else if (args.operation == "9") {
+        double trans = converter_volume::DecilitersinMilliliter(args.value);
         stream << "Kiloliter: ";
-        stream << converter_volume::DecilitersinKiloliter(args.value);
+        stream << converter_volume::MilliliterinKiloliter(args.trans);
     } else if (args.operation == "10") {
+        double trans = converter_volume::DecilitersinMilliliter(args.value);
         stream << "Liter: " << converter_volume::
-            DecilitersinLiter(args.value);
+            MilliliterinLiter(args.trans);
     } else if (args.operation == "11") {
+        double trans = converter_volume::DecilitersinMilliliter(args.value);
         stream << "Centiliters: " << converter_volume::
-            DecilitersinCentiliters(args.value);
+            MilliliterinCentiliters(args.trans);
     } else if (args.operation == "12") {
         stream << "Milliliter: " << converter_volume::
             DecilitersinMilliliter(args.value);
     } else if (args.operation == "13") {
+        double trans = converter_volume::CentilitersinMilliliter(args.value);
         stream << "Kiloliter: ";
-        stream << converter_volume::CentilitersinKiloliter(args.value);
+        stream << converter_volume::MilliliterinKiloliter(args.trans);
     } else if (args.operation == "14") {
+        double trans = converter_volume::CentilitersinMilliliter(args.value);
         stream << "Liter: " << converter_volume::
-            CentilitersinLiter(args.value);
+            MilliliterinLiter(args.trans);
     } else if (args.operation == "15") {
+        double trans = converter_volume::CentilitersinMilliliter(args.value);
         stream << "Deciliters: " << converter_volume::
-            CentilitersinDeciliters(args.value);
+            MilliliterinDeciliters(args.trans);
     } else if (args.operation == "16") {
         stream << "Milliliter: " << converter_volume::
             CentilitersinMilliliter(args.value);
