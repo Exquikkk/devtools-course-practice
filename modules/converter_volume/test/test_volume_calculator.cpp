@@ -187,11 +187,11 @@ TEST_F(LengthVolumeTest, Can_Liter_To_Deciliters) {
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Kiloliter) {
-    vector<string> args = { "1000.0", "Liter_To_Kiloliter" };
+    vector<string> args = { "300.0", "Liter_To_Kiloliter" };
 
     Act(args);
 
-    Assert("Kiloliter: 1.0");
+    Assert("Kiloliter: 0.3");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Milliliter) {
