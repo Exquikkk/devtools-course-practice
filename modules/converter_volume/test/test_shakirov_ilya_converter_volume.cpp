@@ -197,7 +197,7 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Liter_To_Deciliters) {
 
 TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Liter_To_Kiloliter) {
     // Arrange
-    double input = 3.0;
+    double input = 300.0;
     double output;
     double trans = converter_volume::LiterinMilliliter(input);
 
@@ -205,7 +205,7 @@ TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Liter_To_Kiloliter) {
     output = converter_volume::MilliliterinKiloliter(trans);
 
     // Assert
-    EXPECT_NEAR(0.03, output, 0.01);
+    EXPECT_NEAR(3.0, output, 0.1);
 }
 
 TEST(Test_Shakirov_Ilya_Convector_Volume, Can_Kiloliter_To_Milliliter) {
