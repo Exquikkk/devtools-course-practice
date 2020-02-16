@@ -80,7 +80,7 @@ int degree(char * prefix) {
         return -1;
     else if (strcmp(prefix, "Milliliter") == 0)
         return -1;
-    else {
+    else if {
         throw std::string("Wrong operation format!");
     }
 }
