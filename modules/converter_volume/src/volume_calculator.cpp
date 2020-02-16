@@ -42,7 +42,7 @@ void VolumeCalculator::Help(const char* appname, const char* message) {
         "'Milliliter_To_Centiliters',\n";
 }
 
-static int converter_volume::convect(int val, char* from, char* to) {
+static int converter_volume::convect(int val, const char* from, const char* to) {
     int fromd = 0, tod = 0;
     fromd = degree(from);
     tod = degree(to);
