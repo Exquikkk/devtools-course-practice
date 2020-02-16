@@ -7,6 +7,7 @@
 
 class VolumeCalculator {
  public:
+     int degree(char * prefix);
     VolumeCalculator() = default;
     std::string operator()(int argc, const char** argv);
  private:
@@ -15,6 +16,7 @@ class VolumeCalculator {
     std::string message_;
     typedef struct {
         double value, trans;
+        char from, to;
         std::string operation;
     } Arguments;
 };

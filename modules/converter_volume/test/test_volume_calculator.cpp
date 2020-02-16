@@ -47,11 +47,11 @@ TEST_F(LengthVolumeTest, Can_Check_Number_Of_Arguments) {
 
     Act(args);
 
-    Assert("ERROR: Should be 2 arguments\\..*");
+    Assert("ERROR: Should be 3 arguments\\..*");
 }
 
 TEST_F(LengthVolumeTest, Can_Detect_Wrong_Number_Format) {
-    vector<string> args = { "two", "Milliliter_To_Liter" };
+    vector<string> args = { "two", "Milliliter", "Liter"};
 
     Act(args);
 
@@ -59,7 +59,7 @@ TEST_F(LengthVolumeTest, Can_Detect_Wrong_Number_Format) {
 }
 
 TEST_F(LengthVolumeTest, Can_Detect_Wrong_Operation_Format) {
-    vector<string> args = { "1.0", "garbage" };
+    vector<string> args = { "1.0", "garbage", "Liter"};
 
     Act(args);
 
@@ -67,161 +67,161 @@ TEST_F(LengthVolumeTest, Can_Detect_Wrong_Operation_Format) {
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Milliliter) {
-    vector<string> args = { "1", "Centiliters_To_Milliliter" };
+    vector<string> args = { "1", "Centiliter", "Milliliter"};
 
     Act(args);
 
-    Assert("Milliliter: 10");
+    Assert("10");
 }
 
 TEST_F(LengthVolumeTest, Can_Milliliter_To_Deciliters) {
-    vector<string> args = { "1", "Milliliter_To_Deciliters" };
+    vector<string> args = { "1", "Milliliter", "Deciliter" };
 
     Act(args);
 
-    Assert("Deciliters: 0.01");
+    Assert("0.01");
 }
 
 TEST_F(LengthVolumeTest, Can_Milliliter_To_Centiliters) {
-    vector<string> args = { "1", "Milliliter_To_Centiliters" };
+    vector<string> args = { "1", "Milliliter", "Centiliter" };
 
     Act(args);
 
-    Assert("Centiliters: 0.1");
+    Assert("0.1");
 }
 
 TEST_F(LengthVolumeTest, Can_Milliliter_To_Liter) {
-    vector<string> args = { "1.0", "Milliliter_To_Liter" };
+    vector<string> args = { "1.0", "Milliliter", "Liter" };
 
     Act(args);
 
-    Assert("Liter: 0.001");
+    Assert("0.001");
 }
 
 TEST_F(LengthVolumeTest, Can_Milliliter_To_Kiloliter) {
-    vector<string> args = { "1000.0", "Milliliter_To_Kiloliter" };
+    vector<string> args = { "1000.0", "Milliliter", "Kiloliter" };
 
     Act(args);
 
-    Assert("Kiloliter: 0.001");
+    Assert("0.001");
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Deciliters) {
-    vector<string> args = { "1.0", "Centiliters_To_Deciliters" };
+    vector<string> args = { "1.0", "Centiliter", "Deciliter" };
 
     Act(args);
 
-    Assert("Deciliters: 0.1");
+    Assert("0.1");
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Liter) {
-    vector<string> args = { "1", "Centiliters_To_Liter" };
+    vector<string> args = { "1", "Centiliter", "Liter" };
 
     Act(args);
 
-    Assert("Liter: 0.01");
+    Assert("0.01");
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Kiloliter) {
-    vector<string> args = { "100.0", "Centiliters_To_Kiloliter" };
+    vector<string> args = { "100.0", "Centiliter", "Kiloliter" };
 
     Act(args);
 
-    Assert("Kiloliter: 0.001");
+    Assert("0.001");
 }
 
 TEST_F(LengthVolumeTest, Can_Deciliters_To_Milliliter) {
-    vector<string> args = { "1", "Deciliters_To_Milliliter" };
+    vector<string> args = { "1", "Deciliter", "Milliliter" };
 
     Act(args);
 
-    Assert("Milliliter: 100");
+    Assert("100");
 }
 
 TEST_F(LengthVolumeTest, Can_Deciliters_To_Centiliters) {
-    vector<string> args = { "1.0", "Deciliters_To_Centiliters" };
+    vector<string> args = { "1.0", "Deciliter", "Centiliter" };
 
     Act(args);
 
-    Assert("Centiliters: 10");
+    Assert("10");
 }
 
 TEST_F(LengthVolumeTest, Can_Deciliters_To_Liter) {
-    vector<string> args = { "1.0", "Deciliters_To_Liter" };
+    vector<string> args = { "1.0", "Deciliter", "Liter" };
 
     Act(args);
 
-    Assert("Liter: 0.1");
+    Assert("0.1");
 }
 
 TEST_F(LengthVolumeTest, Can_Deciliters_To_Kiloliter) {
-    vector<string> args = { "1.0", "Deciliters_To_Kiloliter" };
+    vector<string> args = { "1.0", "Deciliter", "Kiloliter" };
 
     Act(args);
 
-    Assert("Kiloliter: 0.0001");
+    Assert("0.0001");
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Milliliter) {
-    vector<string> args = { "1", "Liter_To_Milliliter" };
+    vector<string> args = { "1", "Liter", "Milliliter" };
 
     Act(args);
 
-    Assert("Milliliter: 1000");
+    Assert("1000");
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Centiliters) {
-    vector<string> args = { "1", "Liter_To_Centiliters" };
+    vector<string> args = { "1", "Liter", "Centiliter" };
 
     Act(args);
 
-    Assert("Centiliters: 100");
+    Assert("100");
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Deciliters) {
-    vector<string> args = { "1", "Liter_To_Deciliters" };
+    vector<string> args = { "1", "Liter", "Deciliters" };
 
     Act(args);
 
-    Assert("Deciliters: 10");
+    Assert("10");
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Kiloliter) {
-    vector<string> args = { "300.0", "Liter_To_Kiloliter" };
+    vector<string> args = { "300.0", "Liter", "Kiloliter" };
 
     Act(args);
 
-    Assert("Kiloliter: 0.3");
+    Assert("0.3");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Milliliter) {
-    vector<string> args = { "0.00001", "Kiloliter_To_Milliliter" };
+    vector<string> args = { "0.00001", "Kiloliter", "Milliliter" };
 
     Act(args);
 
-    Assert("Milliliter: 10");
+    Assert("10");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Centiliters) {
-    vector<string> args = { "1", "Kiloliter_To_Centiliters" };
+    vector<string> args = { "1", "Kiloliter", "Centiliter" };
 
     Act(args);
 
-    Assert("Centiliters: 100000");
+    Assert("100000");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Deciliters) {
-    vector<string> args = { "1", "Kiloliter_To_Deciliters" };
+    vector<string> args = { "1", "Kiloliter", "Deciliter" };
 
     Act(args);
 
-    Assert("Deciliters: 10000");
+    Assert("10000");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Liter) {
-    vector<string> args = { "1", "Kiloliter_To_Liter" };
+    vector<string> args = { "1", "Kiloliter", "Liter" };
 
     Act(args);
 
-    Assert("Liter: 100");
+    Assert("100");
 }
