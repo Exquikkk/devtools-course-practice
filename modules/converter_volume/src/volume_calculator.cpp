@@ -42,7 +42,23 @@ void VolumeCalculator::Help(const char* appname, const char* message) {
         "'Milliliter_To_Centiliters',\n";
 }
 
-static int converter_volume::convect(int val, const char* from, const char* to) {
+int degree(char * prefix) {
+    if (strcmp(prefix, "Kiloliter") == 0)
+        return 3;
+    else if (strcmp(prefix, "Deciliter") == 0)
+        return -1;
+    else if (strcmp(prefix, "Liter") == 0)
+        return -1;
+    else if (strcmp(prefix, "Centiliter") == 0)
+        return -1;
+    else if (strcmp(prefix, "Milliliter") == 0)
+        return -1;
+    else
+        throw std::string("Wrong operation format!");
+}
+
+static int converter_volume::convect
+    (int val, char* from, char* to) {
     int fromd = 0, tod = 0;
     fromd = degree(from);
     tod = degree(to);
@@ -68,21 +84,6 @@ double parseDouble(const char* arg) {
         throw std::string("Wrong number format!");
     }
     return value;
-}
-
-int degree(char * prefix) {
-    if (strcmp(prefix, "Kiloliter") == 0)
-        return 3;
-    else if (strcmp(prefix, "Deciliter") == 0)
-        return -1;
-    else if (strcmp(prefix, "Liter") == 0)
-        return -1;
-    else if (strcmp(prefix, "Centiliter") == 0)
-        return -1;
-    else if (strcmp(prefix, "Milliliter") == 0)
-        return -1;
-    else
-        throw std::string("Wrong operation format!");
 }
 
 std::string VolumeCalculator::operator()(int argc, const char** argv) {
