@@ -1,6 +1,7 @@
 // Copyright 2019 Shakirov Ilya
 
 #include <stdio.h>
+#include <math.h>
 #include <stdlib.h>
 #include <stdint.h>
 #include <string.h>

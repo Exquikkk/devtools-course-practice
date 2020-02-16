@@ -7,7 +7,6 @@
 
 class VolumeCalculator {
  public:
-     int degree(char * prefix);
     VolumeCalculator() = default;
     std::string operator()(int argc, const char** argv);
  private:
