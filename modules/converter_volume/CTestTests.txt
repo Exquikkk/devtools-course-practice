@@ -146,11 +146,3 @@ add_test(
     PASS_REGULAR_EXPRESSION "Centiliter: 100"
     LABELS "${MODULE}")
 
-add_test(
-    NAME ${prefix}_Can_Liter_To_Deciliter
-    COMMAND ${APPLICATION} 11, Liter_To_Deciliter
-)
-
- set_tests_properties (${prefix}_Can_Liter_To_Deciliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "Deciliter: 10"
-    LABELS "${MODULE}")
