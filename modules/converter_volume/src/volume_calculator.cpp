@@ -80,9 +80,8 @@ int degree(char * prefix) {
         return -1;
     else if (strcmp(prefix, "Milliliter") == 0)
         return -1;
-    else {
+    else
         throw std::string("Wrong operation format!");
-    }
 }
 
 std::string VolumeCalculator::operator()(int argc, const char** argv) {
