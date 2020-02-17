@@ -57,7 +57,7 @@ int degree(const char * prefix) {
         throw std::string("Wrong operation format!");
 }
 
-static int converter_volume::convect
+int converter_volume::convect
     (int val, const char* from, const char* to) {
     int fromd = 0, tod = 0;
     fromd = degree(from);
