@@ -44,15 +44,15 @@ void VolumeCalculator::Help(const char* appname, const char* message) {
 
 int degree(const char * prefix) {
     if (strcmp(prefix, "Kiloliter") == 0)
-        return 3;
+        return 6;
     else if (strcmp(prefix, "Deciliter") == 0)
-        return -1;
+        return 3;
     else if (strcmp(prefix, "Liter") == 0)
-        return -1;
+        return 2;
     else if (strcmp(prefix, "Centiliter") == 0)
-        return -1;
-    else if (strcmp(prefix, "Milliliter") == 0)
         return 0;
+    else if (strcmp(prefix, "Milliliter") == 0)
+        return -1;
     else
         throw std::string("Wrong operation format!");
 }
@@ -71,7 +71,7 @@ bool VolumeCalculator::ValidateNumberOfArgs(int argc, const char** argv) {
         Help(argv[0]);
         return false;
     } else if (argc != 3) {
-        Help(argv[0], "ERROR: Should be 2 arguments.\n");
+        Help(argv[0], "ERROR: Should be 3 arguments.\n");
         return false;
     }
     return true;

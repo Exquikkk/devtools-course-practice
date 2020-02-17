@@ -55,7 +55,7 @@ TEST_F(LengthVolumeTest, Can_Detect_Wrong_Number_Format) {
 
     Act(args);
 
-    Assert("Wrong number format!.*");
+    Assert("Wrong number format!");
 }
 
 TEST_F(LengthVolumeTest, Can_Detect_Wrong_Operation_Format) {
