@@ -42,7 +42,7 @@ void VolumeCalculator::Help(const char* appname, const char* message) {
         "'Milliliter_To_Centiliters',\n";
 }
 
-int degree(char * prefix) {
+int degree(const char * prefix) {
     if (strcmp(prefix, "Kiloliter") == 0)
         return 3;
     else if (strcmp(prefix, "Deciliter") == 0)
@@ -52,17 +52,17 @@ int degree(char * prefix) {
     else if (strcmp(prefix, "Centiliter") == 0)
         return -1;
     else if (strcmp(prefix, "Milliliter") == 0)
-        return -1;
+        return 0;
     else
         throw std::string("Wrong operation format!");
 }
 
 static int converter_volume::convect
-    (int val, char* from, char* to) {
+    (int val, const char* from, const char* to) {
     int fromd = 0, tod = 0;
     fromd = degree(from);
     tod = degree(to);
-    double result = val * (pow(10, fromd - tod));
+    double result = val * (pow(10, abs(fromd) - tod));
     return result;
 }
 

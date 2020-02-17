@@ -5,7 +5,7 @@
 
 class converter_volume {
  public:
-     static int convect(int val, char* from, char* to);
+     static int convect(int val, const char* from, const char* to);
 };
 
 #endif  // MODULES_CONVERTER_VOLUME_INCLUDE_CONVERTER_VOLUME_H_
