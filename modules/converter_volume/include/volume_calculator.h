@@ -9,13 +9,14 @@ class VolumeCalculator {
  public:
     VolumeCalculator() = default;
     std::string operator()(int argc, const char** argv);
+    std::string parseOperation(std::string arg);
  private:
     void Help(const char* appname, const char* message = "");
     bool ValidateNumberOfArgs(int argc, const char** argv);
     std::string message_;
     typedef struct {
         double value, trans;
-        char from, to;
+        std::string from, to;
         std::string operation;
     } Arguments;
 };

@@ -10,39 +10,7 @@
 #include "include/volume_calculator.h"
 #include "include/converter_volume.h"
 
-void VolumeCalculator::Help(const char* appname, const char* message) {
-    message_ =
-        std::string(message) +
-        "This is a volume calculator application.\n" +
-        "Please provide arguments in the following format:\n" +
-        "  $ " + appname + " <value> <operation>\n" +
-        "Value have to be a double-precision number, " +
-        "and number operation is one of the following:\n" +
-        "'Kiloliter_To_Liter',\n" +
-        "'Kiloliter_To_Deciliters',\n" +
-        "'Kiloliter_To_Centiliters',\n" +
-        "'Kiloliter_To_Milliliter',\n" +
-        "'Liter_To_Kiloliter',\n" +
-        "'Liter_To_Deciliters',\n" +
-        "'Liter_To_Centiliters',\n" +
-        "'Liter_To_Milliliter',\n" +
-        "'Deciliters_To_Kiloliter',\n" +
-        "'Deciliters_To_Liter',\n" +
-        "'Deciliters_To_Centiliters',\n" +
-        "'Deciliters_To_Milliliter',\n" +
-        "'Centiliters_To_Kiloliter',\n" +
-        "'Centiliters_To_Kiloliter',\n" +
-        "'Centiliters_To_Kiloliter',\n" +
-        "'Centiliters_To_Liter',\n" +
-        "'Centiliters_To_Deciliters',\n" +
-        "'Centiliters_To_Milliliter',\n" +
-        "'Milliliter_To_Kiloliter',\n" +
-        "'Milliliter_To_Liter',\n" +
-        "'Milliliter_To_Deciliters',\n" +
-        "'Milliliter_To_Centiliters',\n";
-}
-
-int degree(const char * prefix) {
+int degree(std::string prefix) {
     if (strcmp(prefix, "Kiloliter") == 0)
         return 6;
     else if (strcmp(prefix, "Deciliter") == 0)
@@ -58,12 +26,27 @@ int degree(const char * prefix) {
 }
 
 int converter_volume::convect
-    (int val, const char* from, const char* to) {
+(int val, std::string from, std::string to) {
     int fromd = 0, tod = 0;
     fromd = degree(from);
     tod = degree(to);
     double result = val * (pow(10, abs(fromd) - tod));
     return result;
+}
+
+void VolumeCalculator::Help(const char* appname, const char* message) {
+    message_ =
+        std::string(message) +
+        "This is a volume calculator application.\n" +
+        "Please provide arguments in the following format:\n" +
+        "  $ " + appname + " <value> <operation>\n" +
+        "Value have to be a double-precision number, " +
+        "and number operation is one of the following:\n" +
+        "'Kiloliter',\n" +
+        "'Liter',\n" +
+        "'Deciliter',\n" +
+        "'Centiliter',\n" +
+        "'Milliliter',\n";
 }
 
 bool VolumeCalculator::ValidateNumberOfArgs(int argc, const char** argv) {
@@ -86,6 +69,12 @@ double parseDouble(const char* arg) {
     return value;
 }
 
+std::string VolumeCalculator::parseOperation(std::string arg) {
+    Arguments args;
+    std::string op = std::to_string(static_cast<int>(converter_volume::convect(args.value, args.from, args.to)));
+    return op;
+}
+
 std::string VolumeCalculator::operator()(int argc, const char** argv) {
     Arguments args;
 
@@ -94,8 +83,8 @@ std::string VolumeCalculator::operator()(int argc, const char** argv) {
     }
     try {
         args.value = parseDouble(argv[1]);
-        args.from = atoi(argv[2]);
-        args.to = atoi(argv[3]);
+        args.from = parseOperation(argv[2]);
+        args.to = parseOperation(argv[3]);
     }
     catch (std::string& str) {
         return str;
