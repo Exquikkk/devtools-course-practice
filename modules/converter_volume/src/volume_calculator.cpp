@@ -92,6 +92,7 @@ std::string VolumeCalculator::operator()(int argc, const char** argv) {
     }
 
     std::ostringstream stream;
+    stream << converter_volume::convect(args.value, args.from, args.to);
     message_ = stream.str();
     return message_;
 }
