@@ -11,15 +11,15 @@
 #include "include/converter_volume.h"
 
 int degree(std::string prefix) {
-    if (strcmp(prefix, "Kiloliter") == 0)
+    if (prefix == "Kiloliter")
         return 6;
-    else if (strcmp(prefix, "Deciliter") == 0)
+    else if (prefix =="Deciliter")
         return 3;
-    else if (strcmp(prefix, "Liter") == 0)
+    else if (prefix == "Liter")
         return 2;
-    else if (strcmp(prefix, "Centiliter") == 0)
+    else if (prefix == "Centiliter")
         return 0;
-    else if (strcmp(prefix, "Milliliter") == 0)
+    else if (prefix == "Milliliter") 
         return -1;
     else
         throw std::string("Wrong operation format!");
@@ -71,7 +71,8 @@ double parseDouble(const char* arg) {
 
 std::string VolumeCalculator::parseOperation(std::string arg) {
     Arguments args;
-    std::string op = std::to_string(static_cast<int>(converter_volume::convect(args.value, args.from, args.to)));
+    std::string op = std::to_string(static_cast<int>
+        (converter_volume::convect(args.value, args.from, args.to)));
     return op;
 }
 
