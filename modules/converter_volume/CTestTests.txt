@@ -27,12 +27,12 @@
 )
 
  set_tests_properties (${prefix}_Can_Check_Number_Of_Arguments PROPERTIES
-    PASS_REGULAR_EXPRESSION "ERROR: Should be 2 arguments\\..*"
+    PASS_REGULAR_EXPRESSION "ERROR: Should be 3 arguments\\..*"
     LABELS "${MODULE}")
 
  add_test(
     NAME ${prefix}_Can_Detect_Wrong_Number_Format
-    COMMAND ${APPLICATION} two, Milliliter_To_Liter
+    COMMAND ${APPLICATION} two, Milliliter, Liter
 )
 
  set_tests_properties (${prefix}_Can_Detect_Wrong_Number_Format PROPERTIES
@@ -40,7 +40,7 @@
 
  add_test(
     NAME ${prefix}_Can_Detect_Wrong_Operation_Format
-    COMMAND ${APPLICATION} 1.0, garbage
+    COMMAND ${APPLICATION} 1.0, ryer, Liter
 )
 
  set_tests_properties (${prefix}_Can_Detect_Wrong_Operation_Format PROPERTIES
@@ -49,108 +49,108 @@
 
  add_test(
     NAME ${prefix}_Can_Centiliter_To_Milliliter
-    COMMAND ${APPLICATION} 1, Centiliter_To_Milliliter
+    COMMAND ${APPLICATION} 3.0, Centiliter, Milliliter
 )
 
  set_tests_properties (${prefix}_Can_Centiliter_To_Milliliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "10"
+    PASS_REGULAR_EXPRESSION "30"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Milliliter_To_Deciliter
-    COMMAND ${APPLICATION} 1, Milliliter_To_Deciliter
+    COMMAND ${APPLICATION} 300.0, Milliliter, Deciliter
 )
 
  set_tests_properties (${prefix}_Can_Milliliter_To_Deciliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "0.01"
+    PASS_REGULAR_EXPRESSION "3"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Milliliter_To_Centiliter
-    COMMAND ${APPLICATION} 1, Milliliter_To_Centiliter
+    COMMAND ${APPLICATION} 3.0, Milliliter, Centiliter
 )
 
  set_tests_properties (${prefix}_Can_Milliliter_To_Centiliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "0.1"
+    PASS_REGULAR_EXPRESSION "30"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Milliliter_To_Liter
-    COMMAND ${APPLICATION} 1.0, Milliliter_To_Liter
+    COMMAND ${APPLICATION} 30.0, Milliliter, Liter
 )
 
  set_tests_properties (${prefix}_Can_Milliliter_To_Liter PROPERTIES
-    PASS_REGULAR_EXPRESSION "0.001"
+    PASS_REGULAR_EXPRESSION "3"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Centiliter_To_Deciliter
-    COMMAND ${APPLICATION} 1.0, Centiliter_To_Deciliter
+    COMMAND ${APPLICATION} 3000.0, Centiliter, Deciliter
 )
 
  set_tests_properties (${prefix}_Can_Centiliter_To_Deciliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "0.1"
+    PASS_REGULAR_EXPRESSION "3"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Centiliter_To_Liter
-    COMMAND ${APPLICATION} 1, Centiliter_To_Liter
+    COMMAND ${APPLICATION} 300.0, Centiliter, Liter
 )
 
  set_tests_properties (${prefix}_Can_Centiliter_To_Liter PROPERTIES
-    PASS_REGULAR_EXPRESSION "0.001"
+    PASS_REGULAR_EXPRESSION "3"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Deciliter_To_Milliliter
-    COMMAND ${APPLICATION} 1, Deciliter_To_Milliliter
+    COMMAND ${APPLICATION} 3.0, Deciliter, Milliliter
 )
 
  set_tests_properties (${prefix}_Can_Deciliter_To_Milliliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "100"
+    PASS_REGULAR_EXPRESSION "30000"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Deciliter_To_Centiliter
-    COMMAND ${APPLICATION} 1.0, Deciliter_To_Centiliter
+    COMMAND ${APPLICATION} 3.0, Deciliter, Centiliter
 )
 
  set_tests_properties (${prefix}_Can_Deciliter_To_Centiliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "10"
+    PASS_REGULAR_EXPRESSION "3000"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Deciliter_To_Liter
-    COMMAND ${APPLICATION} 1.0, Deciliter_To_Liter
+    COMMAND ${APPLICATION} 3.0, Deciliter, Liter
 )
 
  set_tests_properties (${prefix}_Can_Deciliter_To_Liter PROPERTIES
-    PASS_REGULAR_EXPRESSION "0.1"
+    PASS_REGULAR_EXPRESSION "30"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Liter_To_Milliliter
-    COMMAND ${APPLICATION} 1, Liter_To_Milliliter
+    COMMAND ${APPLICATION} 3.0, Liter, Milliliter
 )
 
  set_tests_properties (${prefix}_Can_Liter_To_Milliliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "1000"
+    PASS_REGULAR_EXPRESSION "3000"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Liter_To_Centiliter
-    COMMAND ${APPLICATION} 1, Liter_To_Centiliter
+    COMMAND ${APPLICATION} 3.0, Liter, Centiliter
 )
  
  set_tests_properties (${prefix}_Can_Liter_To_Centiliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "100"
+    PASS_REGULAR_EXPRESSION "300"
     LABELS "${MODULE}")
 
 add_test(
     NAME ${prefix}_Can_Liter_To_Deciliter
-    COMMAND ${APPLICATION} 11, Liter_To_Deciliter
+    COMMAND ${APPLICATION} 30.0, Liter_To_Deciliter
 )
 
  set_tests_properties (${prefix}_Can_Liter_To_Deciliter PROPERTIES
-    PASS_REGULAR_EXPRESSION "10"
+    PASS_REGULAR_EXPRESSION "3"
     LABELS "${MODULE}")
