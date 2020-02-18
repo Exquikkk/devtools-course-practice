@@ -19,9 +19,8 @@ int degree(std::string prefix) {
         return 2;
     else if (prefix == "Centiliter")
         return 0;
-    else if (prefix == "Milliliter")
+    else
         return -1;
-    return 0;
 }
 
 int converter_volume::convect
