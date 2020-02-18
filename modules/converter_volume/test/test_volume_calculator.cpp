@@ -107,7 +107,7 @@ TEST_F(LengthVolumeTest, Can_Milliliter_To_Kiloliter) {
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Deciliters) {
-    vector<string> args = { "300.0", "Centiliter", "Deciliter" };
+    vector<string> args = { "3000.0", "Centiliter", "Deciliter" };
 
     Act(args);
 
@@ -115,7 +115,7 @@ TEST_F(LengthVolumeTest, Can_Centiliters_To_Deciliters) {
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Liter) {
-    vector<string> args = { "30.0", "Centiliter", "Liter" };
+    vector<string> args = { "300.0", "Centiliter", "Liter" };
 
     Act(args);
 
@@ -123,7 +123,7 @@ TEST_F(LengthVolumeTest, Can_Centiliters_To_Liter) {
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Kiloliter) {
-    vector<string> args = { "300000.0", "Centiliter", "Kiloliter" };
+    vector<string> args = { "3000000.0", "Centiliter", "Kiloliter" };
 
     Act(args);
 
@@ -179,7 +179,7 @@ TEST_F(LengthVolumeTest, Can_Liter_To_Centiliters) {
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Deciliters) {
-    vector<string> args = { "30.0", "Liter", "Deciliters" };
+    vector<string> args = { "30.0", "Liter", "Deciliter" };
 
     Act(args);
 
