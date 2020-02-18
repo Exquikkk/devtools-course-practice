@@ -13,13 +13,15 @@
 int degree(std::string prefix) {
     if (prefix == "Kiloliter")
         return 6;
-    else if (prefix =="Deciliter")
+    else if (prefix == "Deciliter")
         return 3;
     else if (prefix == "Liter")
         return 2;
     else if (prefix == "Centiliter")
         return 0;
     else if (prefix == "Milliliter")
+        return -1;
+    else
         return -1;
 }
 
