@@ -19,7 +19,7 @@ int degree(std::string prefix) {
         return 2;
     else if (prefix == "Centiliter")
         return 0;
-    else if (prefix == "Milliliter") 
+    else if (prefix == "Milliliter")
         return -1;
     else
         throw std::string("Wrong operation format!");
