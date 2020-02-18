@@ -71,15 +71,15 @@ TEST_F(LengthVolumeTest, Can_Centiliters_To_Milliliter) {
 
     Act(args);
 
-    Assert("30.0");
+    Assert("30");
 }
 
 TEST_F(LengthVolumeTest, Can_Milliliter_To_Deciliters) {
-    vector<string> args = { "3.0", "Milliliter", "Deciliter" };
+    vector<string> args = { "300.0", "Milliliter", "Deciliter" };
 
     Act(args);
 
-    Assert("0.03");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Milliliter_To_Centiliters) {
@@ -87,47 +87,47 @@ TEST_F(LengthVolumeTest, Can_Milliliter_To_Centiliters) {
 
     Act(args);
 
-    Assert("30.0");
+    Assert("30");
 }
 
 TEST_F(LengthVolumeTest, Can_Milliliter_To_Liter) {
-    vector<string> args = { "3.0", "Milliliter", "Liter" };
+    vector<string> args = { "30.0", "Milliliter", "Liter" };
 
     Act(args);
 
-    Assert("0.3");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Milliliter_To_Kiloliter) {
-    vector<string> args = { "3.0", "Milliliter", "Kiloliter" };
+    vector<string> args = { "300000.0", "Milliliter", "Kiloliter" };
 
     Act(args);
 
-    Assert("0.000003");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Deciliters) {
-    vector<string> args = { "3.0", "Centiliter", "Deciliter" };
+    vector<string> args = { "300.0", "Centiliter", "Deciliter" };
 
     Act(args);
 
-    Assert("0.003");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Liter) {
-    vector<string> args = { "3.0", "Centiliter", "Liter" };
+    vector<string> args = { "30.0", "Centiliter", "Liter" };
 
     Act(args);
 
-    Assert("0.03");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Centiliters_To_Kiloliter) {
-    vector<string> args = { "3.0", "Centiliter", "Kiloliter" };
+    vector<string> args = { "300000.0", "Centiliter", "Kiloliter" };
 
     Act(args);
 
-    Assert("0.000003");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Deciliters_To_Milliliter) {
@@ -135,7 +135,7 @@ TEST_F(LengthVolumeTest, Can_Deciliters_To_Milliliter) {
 
     Act(args);
 
-    Assert("30000.0");
+    Assert("30000");
 }
 
 TEST_F(LengthVolumeTest, Can_Deciliters_To_Centiliters) {
@@ -143,7 +143,7 @@ TEST_F(LengthVolumeTest, Can_Deciliters_To_Centiliters) {
 
     Act(args);
 
-    Assert("3000.0");
+    Assert("3000");
 }
 
 TEST_F(LengthVolumeTest, Can_Deciliters_To_Liter) {
@@ -151,15 +151,15 @@ TEST_F(LengthVolumeTest, Can_Deciliters_To_Liter) {
 
     Act(args);
 
-    Assert("30.0");
+    Assert("30");
 }
 
 TEST_F(LengthVolumeTest, Can_Deciliters_To_Kiloliter) {
-    vector<string> args = { "3.0", "Deciliter", "Kiloliter" };
+    vector<string> args = { "3000.0", "Deciliter", "Kiloliter" };
 
     Act(args);
 
-    Assert("0.0003");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Milliliter) {
@@ -167,7 +167,7 @@ TEST_F(LengthVolumeTest, Can_Liter_To_Milliliter) {
 
     Act(args);
 
-    Assert("3000.0");
+    Assert("3000");
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Centiliters) {
@@ -175,23 +175,23 @@ TEST_F(LengthVolumeTest, Can_Liter_To_Centiliters) {
 
     Act(args);
 
-    Assert("300.0");
+    Assert("300");
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Deciliters) {
-    vector<string> args = { "3.0", "Liter", "Deciliters" };
+    vector<string> args = { "30.0", "Liter", "Deciliters" };
 
     Act(args);
 
-    Assert("0.3");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Liter_To_Kiloliter) {
-    vector<string> args = { "300.0", "Liter", "Kiloliter" };
+    vector<string> args = { "300000.0", "Liter", "Kiloliter" };
 
     Act(args);
 
-    Assert("0.0003");
+    Assert("3");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Milliliter) {
@@ -199,7 +199,7 @@ TEST_F(LengthVolumeTest, Can_Kiloliter_To_Milliliter) {
 
     Act(args);
 
-    Assert("30000000.0");
+    Assert("30000000");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Centiliters) {
@@ -207,7 +207,7 @@ TEST_F(LengthVolumeTest, Can_Kiloliter_To_Centiliters) {
 
     Act(args);
 
-    Assert("3000000.0");
+    Assert("3000000");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Deciliters) {
@@ -215,7 +215,7 @@ TEST_F(LengthVolumeTest, Can_Kiloliter_To_Deciliters) {
 
     Act(args);
 
-    Assert("3000.0");
+    Assert("3000");
 }
 
 TEST_F(LengthVolumeTest, Can_Kiloliter_To_Liter) {
@@ -223,5 +223,5 @@ TEST_F(LengthVolumeTest, Can_Kiloliter_To_Liter) {
 
     Act(args);
 
-    Assert("30000.0");
+    Assert("30000");
 }

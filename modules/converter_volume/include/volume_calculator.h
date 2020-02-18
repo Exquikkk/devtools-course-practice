@@ -9,7 +9,7 @@ class VolumeCalculator {
  public:
     VolumeCalculator() = default;
     std::string operator()(int argc, const char** argv);
-    std::string parseOperation(std::string arg);
+    std::string parseOperation(const char* arg);
  private:
     void Help(const char* appname, const char* message = "");
     bool ValidateNumberOfArgs(int argc, const char** argv);
